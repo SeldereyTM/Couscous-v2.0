@@ -1,5 +1,6 @@
 # Couscous-v2.0
 Задания второго курса из Университета
+____
 # Задание 1 (Класс Person и редактор объектов)
 <details>
   <summary>Требования к заданию:</summary>
@@ -15,3 +16,4 @@
 </details>
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Main.java)
+____
