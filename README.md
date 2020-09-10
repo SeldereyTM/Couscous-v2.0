@@ -14,4 +14,4 @@
 
 </details>
 
-[Решение](https://github.com/europeec/java-rep/blob/master/homework/src/First.java)
+[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Main.java)
