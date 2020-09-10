@@ -2,7 +2,6 @@
 Задания второго курса из Университета
 # Задание 1 (Класс Person и редактор объектов)
 <details>
- [Решение](https://github.com/europeec/java-rep/blob/master/homework/src/First.java)
   <summary>Требования к заданию:</summary>
   
      1.Создать класс Person со свойствами: имя, возраст, модель телефона, номер телефона
@@ -14,3 +13,4 @@
      7.Добавить проверку корректности номера телефона
 
 </details>
+[Решение](https://github.com/europeec/java-rep/blob/master/homework/src/First.java)
