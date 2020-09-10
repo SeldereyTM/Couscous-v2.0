@@ -1,8 +1,8 @@
 # Couscous-v2.0
 Задания второго курса из Университета
-# [Задание 1 (Класс Person и редактор объектов)]
+# Задание 1 (Класс Person и редактор объектов)
 <details>
-  [`(Решение)`](https://github.com/europeec/java-rep/blob/master/homework/src/First.java)
+ [Решение](https://github.com/europeec/java-rep/blob/master/homework/src/First.java)
   <summary>Требования к заданию:</summary>
   
      1.Создать класс Person со свойствами: имя, возраст, модель телефона, номер телефона
