@@ -44,3 +44,4 @@ ____
 </details>
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/FirstGame.java)
+____
