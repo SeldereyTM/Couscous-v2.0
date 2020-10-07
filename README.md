@@ -31,3 +31,16 @@ ____
 </details>
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/laba2.java)
+____
+## Задание 3 (Текстовая игра)
+<details>
+  <summary>Требования к заданию:</summary>
+  
+     1.Написать любую текстовую игру на свой выбор
+     2.Использовать все, что мы изучили за время курса
+     3.Сделать красиво
+     
+
+</details>
+
+[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/FirstGame.java)
