@@ -1,3 +1,4 @@
+package example;
 
 import java.util.Scanner;  // Подключение сканера
 
@@ -16,7 +17,8 @@ public class FirstGame{
             int numOfEnemy = (int)(Math.random() * (level * 5) + (level * 3));  // Генерация случайного кол-ва врагов в зависимости от сложности
             int statOfEnemy = numOfEnemy;  // Создание доп счетчика прохождения подземелья
 
-            Enemy boss = new Enemy(250 * level, 5 * level, 15 * level, 1000);  // Создание Босса
+            Enemy boss;  // Создание Босса
+            boss = new Enemy(250 * level, 5 * level, 15 * level, 1000);
 
             Enemy[] enemies = new Enemy[numOfEnemy];  // Создание массива врагов
             for (int i = 0; i < numOfEnemy; i++){  // Создание случайных параметров для врагов
@@ -33,23 +35,24 @@ public class FirstGame{
 
             System.out.println("\nВыберите класс:\n1 - Танк\n2 - Маг\n3 - Целитель\n4 - яростный бомж");  // Выбор класса гг
             int quality = scan.nextInt();
-            switch(quality){  // Отображение выбранного класса
-                case 1 :
+            // Отображение выбранного класса
+            switch (quality) {
+                case 1 -> {
                     hero.setHero(260, 10, 20, 10);
                     System.out.println("\nВаши стартовые показатели:\n--------\nЗдоровье - 260\nБроня - 10\nУрон - 20\nЛечение - 10\n--------");
-                    break;
-                case 2 :
+                }
+                case 2 -> {
                     hero.setHero(180, 5, 30, 15);
                     System.out.println("\nВаши стартовые показатели:\n--------\nЗдоровье - 180\nБроня - 5\nУрон - 35\nЛечение - 15\n--------");
-                    break;
-                case 3 :
+                }
+                case 3 -> {
                     hero.setHero(150, 7, 15, 20);
                     System.out.println("\nВаши стартовые показатели:\n--------\nЗдоровье - 150\nБроня - 7\nУрон - 15\nЛечение - 20\n--------");
-                    break;
-                case 4 :
+                }
+                case 4 -> {
                     hero.setHero(80, 5, 45, 5);
                     System.out.println("\nВаши стартовые показатели:\n--------\nЗдоровье - 80\nБроня - 5\nУрон - 45\nЛечение - 5\n--------");
-                    break;
+                }
             }
 
             // Начало игры
@@ -69,16 +72,10 @@ public class FirstGame{
                             System.out.println("Что делать?...\n1 - атаковать\n2 - лечиться\n9 - бежать");  // Выбор действия после
                             battleAnswer = scan.nextInt();
                         }
-                        switch(battleAnswer){
-                            case 1 :
-                                enemies[i].getDamage(hero);
-                                break;
-                            case 2 :
-                                hero.getHeal();
-                                break;
-                            case 9 :
-                                hero.health = 0;
-                                break;
+                        switch (battleAnswer) {
+                            case 1 -> enemies[i].getDamage(hero);
+                            case 2 -> hero.getHeal();
+                            case 9 -> hero.health = 0;
                         }
 
                         if (enemies[i].health > 0) hero.getDamage(enemies[i]);  // Если враг жив, герой получает по шапке
@@ -112,22 +109,16 @@ public class FirstGame{
                         System.out.println("Что делать?...\n1 - атаковать\n2 - лечиться\n9 - бежать");
                         battleAnswer = scan.nextInt();
                     }
-                    switch(battleAnswer){
-                        case 1 :
-                            boss.getDamage(hero);
-                            break;
-                        case 2 :
-                            hero.getHeal();
-                            break;
-                        case 9 :
-                            hero.health = 0;
-                            break;
+                    switch (battleAnswer) {
+                        case 1 -> boss.getDamage(hero);
+                        case 2 -> hero.getHeal();
+                        case 9 -> hero.health = 0;
                     }
 
                     if (boss.health > 0) hero.getDamage(boss);
                 }
                 if (hero.health <= 0) System.out.println(hero.name + " погиб от рук Томми Бейкера. Очередной герой, чьи останки будут гнить перед дверьми тронного зала...\nКонец игры...");
-                else if (boss.health <= 0){
+                else {
                     System.out.println("\n" + hero.name + " яростно нанес завершающий удар Томми Бейкеру. С рук героя лилась кровь врага, перемешенная с его собственной. Отдышавшись, он пошел в сторону трона...");
                     System.out.println(hero.name + " уселся на трон. На его лице появилась дьявольская ухмылка. \nДвери зала медленно закрылись, а новоиспеченный Король подземелья остался в полном одиночестве.");
                     System.out.println("Кажется, наш герой уже никогда не вспомнит о золотом питухе, за которым он прежде так гнался...");
@@ -145,16 +136,16 @@ public class FirstGame{
         String name;
         int health, armor, damage, heal, maxHealth, xp, level;
 
-        Hero(String name, int health, int armor, int damage, int heal, int maxHealth, int xp, int level) {  // Объявление греоя
-            this.name = name;
-            this.health = health;
-            this.armor = armor;
-            this.damage = damage;
-            this.heal = heal;
-            this.maxHealth = maxHealth;
-            this.xp = xp;
-            this.level = level;
-        }
+//        Hero(String name, int health, int armor, int damage, int heal, int maxHealth, int xp, int level) {  // Объявление греоя
+//            this.name = name;
+//            this.health = health;
+//            this.armor = armor;
+//            this.damage = damage;
+//            this.heal = heal;
+//            this.maxHealth = maxHealth;
+//            this.xp = xp;
+//            this.level = level;
+//        }
 
         public void setHero(int health, int armor, int damage, int heal) {  // Выбор класса
             this.health = health;
@@ -168,9 +159,9 @@ public class FirstGame{
             this.name = name;
         }
 
-        Hero() {  // стандартные значения
-            this("NoN", 100, 25, 30, 20, 100, 0, 1);
-        }
+//        Hero() {  // стандартные значения
+//            this("NoN", 100, 25, 30, 20, 100, 0, 1);
+//        }
 
         void getHeal() {  // Лечение
             if ((this.health + this.heal) >= this.maxHealth){
@@ -196,23 +187,23 @@ public class FirstGame{
                 this.xp -= 100;
                 System.out.println("\nУ " + this.name + " новый уровень!(Lv" + (this.level - 1) + "->" + (this.level) + ")\nВыберите характеристику для прокачки:\n1 - здоровье (+15)\n2 - броня (+2)\n3 - урон (+8)\n4 - лечение (+5)");
                 int answer1 = scan1.nextInt();
-                switch(answer1){
-                    case 1 :
+                switch (answer1) {
+                    case 1 -> {
                         this.maxHealth += 15;
                         System.out.println("Максимальное здоровье увеличено!");
-                        break;
-                    case 2 :
+                    }
+                    case 2 -> {
                         this.armor += 2;
                         System.out.println("Броня улучшена!");
-                        break;
-                    case 3 :
+                    }
+                    case 3 -> {
                         this.damage += 8;
                         System.out.println("Боевые навыки повышены!");
-                        break;
-                    case 4 :
+                    }
+                    case 4 -> {
                         this.heal += 5;
                         System.out.println("Лечение улучшено!");
-                        break;
+                    }
                 }
                 this.health = this.maxHealth;
                 System.out.println("Здоровье восполнено до максимума!");
@@ -245,9 +236,9 @@ public class FirstGame{
             this.xp = xp;
         }
 
-        Enemy(){  // стандартные значения
-            this(100, 25, 30, 10);
-        }
+//        Enemy(){  // стандартные значения
+//            this(100, 25, 30, 10);
+//        }
 
         void getDamage(Hero h){  // Урон противнику
            if(this.armor < h.damage){
