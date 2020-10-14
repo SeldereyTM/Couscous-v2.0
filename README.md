@@ -44,7 +44,7 @@ ____
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/FirstGame.java)
 ____
-## Задание 4 (Работа с текстоыми файлами)
+## Задание 4 (Работа с текстовыми файлами)
 <details>
   <summary>Требования к заданию:</summary>
   
