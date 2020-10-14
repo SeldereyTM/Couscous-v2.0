@@ -1,6 +1,5 @@
 package example;
 
-
 import java.io.BufferedReader;  // Миллион непонятных импортов
 import java.io.File;
 import java.io.FileReader;
@@ -45,7 +44,6 @@ public class pRiKoL {
 
 
         // Пункт 2
-
         File text = new File("Hedgehog.txt");  // Создание файла
 
         try {
@@ -89,32 +87,32 @@ public class pRiKoL {
         File anton = new File("Anton.txt");  // СОздание двух Файлов
         File ganDone = new File("GanDone.txt");
 
-    try {
-        Scanner scanA = new Scanner(anton);
-        Scanner scanB = new Scanner(ganDone);
+        try {
+            Scanner scanA = new Scanner(anton);
+            Scanner scanB = new Scanner(ganDone);
 
-        String antonLine = scanA.nextLine();  // Считывание строк в файлах
-        String gunDoneLine = scanB.nextLine();
+            String antonLine = scanA.nextLine();  // Считывание строк в файлах
+            String gunDoneLine = scanB.nextLine();
 
-        StringBuffer bufferAnton = new StringBuffer(antonLine);  // Непонятная штука, но она нужна
-        StringBuffer bufferGunDone = new StringBuffer(gunDoneLine);
+            StringBuffer bufferAnton = new StringBuffer(antonLine);  // Непонятная штука, но она нужна
+            StringBuffer bufferGunDone = new StringBuffer(gunDoneLine);
 
-        bufferAnton.reverse();  // Процесс выворачивание строки
-        bufferGunDone.reverse();
+            bufferAnton.reverse();  // Процесс выворачивание строки
+            bufferGunDone.reverse();
 
-        PrintWriter writerAnton = new PrintWriter(anton);  // Создание
-        PrintWriter writerGanDone = new PrintWriter(ganDone);
+            PrintWriter writerAnton = new PrintWriter(anton);  // Создание
+            PrintWriter writerGanDone = new PrintWriter(ganDone);
 
-        writerAnton.println(bufferGunDone);  // Замена строк местами в файлах
-        writerGanDone.println(bufferAnton);
+            writerAnton.println(bufferGunDone);  // Замена строк местами в файлах
+            writerGanDone.println(bufferAnton);
 
-        writerAnton.close();  // Деструктор считывателей
-        writerGanDone.close();
+            writerAnton.close();  // Деструктор считывателей
+            writerGanDone.close();
 
-        System.out.println("   ---------\nФайлы Anton & GunDone отредактированы");
+            System.out.println("   ---------\nФайлы Anton & GunDone отредактированы");
 
         } catch (IOException e) {
-        e.printStackTrace();
-     }
+            e.printStackTrace();
+        }
     }
 }
