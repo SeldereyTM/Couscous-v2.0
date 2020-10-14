@@ -1,0 +1,100 @@
+
+import java.io.*;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    System.out.println("Введите 2 числа");
+		int a,b=1;
+		Scanner scan = new Scanner(System.in);
+		while(true){
+	    try{
+		a = scan.nextInt();
+		b = scan.nextInt();
+		break;
+	    } catch(Exception e){
+	        scan.next();
+	        System.out.println("Введите корректные данные");
+	    }
+		}
+	try{
+	    int result = a/b;
+	    System.out.printf("%d / %d = %d",a,b,result);
+	}catch(ArithmeticException e){
+	    System.out.println(a+" / "+b+" = математика проиграла");
+	}
+	
+	try{
+	    int result = b/a;
+	    System.out.println("");
+	    System.out.printf("%d / %d = %d",b,a,result);
+	}catch(Exception e){
+	    System.out.println(b+" / "+a+" = математика проиграла");
+	}
+	
+	
+	
+	
+	File text = new File("Hedgehog.txt");
+	try{
+	
+		PrintWriter writer = new PrintWriter(text);
+
+    for(int i = 1;i<=200;i++){
+        writer.println("@"+i+": "+(int)(Math.random()*100+1));
+        
+    }
+    writer.close();
+	}catch(Exception e){
+	    System.out.println("Ты дубина все сломал");
+	}
+	
+    File text1 = new File("Hedgehog.txt");
+    System.out.println("Выберете номер числа, которое надо вывести");
+    String adress = scan.nextLine();
+    adress="@"+adress+": ";
+    while(scan.hasNext()){
+            
+            String w = scan.next();
+            if(w.equals(adress)){
+                try{
+                Scanner scan1 = new Scanner(text1);
+                String n = scan1.nextLine();
+                System.out.println(n);
+                
+                }catch(Exception e){
+                  System.out.println("Ты все поломал");  
+                }
+                break;
+            }
+    }
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	}
+}
