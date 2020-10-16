@@ -1,18 +1,18 @@
 package example;
 
-import java.util.Scanner;  //Подключение сканера для считывания информации с клавиатуры в консоль
+import java.util.Scanner;  // Подключение сканера для считывания информации с клавиатуры в консоль
 
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);  //создание сканера1
+        Scanner scan = new Scanner(System.in);  // создание сканера1
         System.out.print("Введите количество пользователей: ");
         int count = scan.nextInt();
 
-        Person[] persons = new Person[count];  //объявление массива объектов
+        Person[] persons = new Person[count];  // объявление массива объектов
         for (int i = 0; i < count; i++) {
-            Scanner scan2 = new Scanner(System.in);  //создание еще двух сканеров
-            Scanner scan3 = new Scanner(System.in);  //
+            Scanner scan2 = new Scanner(System.in);  // создание еще двух сканеров
+            Scanner scan3 = new Scanner(System.in);  
 
             persons[i] = new Person();
 
@@ -33,13 +33,13 @@ public class Main {
             System.out.println(persons[i].name + " добавлен!\n");
         }
 
-        System.out.println("\nВсе добавленные пользователи:");  //вывод всех созданных объектов
+        System.out.println("\nВсе добавленные пользователи:");  // вывод всех созданных объектов
         for (int i = 0; i < count; i++){
             System.out.println("-------------");
             persons[i].displayInfo();
         }
 
-        Scanner scan4 = new Scanner(System.in);  //запуск редактора объектов
+        Scanner scan4 = new Scanner(System.in);  // запуск редактора объектов
         System.out.println("-------------\nВы хотите отредактировать какого-нибудь пользователя?\n1-ДА\n2-НЕТ");
         byte answer = scan4.nextByte();
         while (answer!=2){
@@ -68,8 +68,8 @@ public class Main {
             answer = scan4.nextByte();
         }
 
-        System.out.println("\nВсе добавленные пользователи:");  //вывод всех отредакторованных созданных объектов
-        for (int i = 0; i < count; i++){
+        System.out.println("\nВсе добавленные пользователи:");  // вывод всех отредакторованных созданных объектов
+        for (int i = 0; i < count; i++){ 
             System.out.println("-------------");
             persons[i].displayInfo();
         }
@@ -83,7 +83,7 @@ class Person{  //Создание класса человек
     String name, model, num;
     int age;
 
-    public Person(String name, int age, String model, String num){  //Конструктор объектов
+    public Person(String name, int age, String model, String num){  // Конструктор объектов
         this.name = name;
         this.age = age;
         this.model = model;
@@ -97,7 +97,7 @@ class Person{  //Создание класса человек
    void ChangeNum(){  //Изменение номера телефона
         Scanner scan = new Scanner(System.in);
 
-        this.num= scan.nextLine();  //проверка корректности номера телефона
+        this.num= scan.nextLine();  // проверка корректности номера телефона
        while(( this.num.length() != 12 ) || (this.num.indexOf("+") != 0)||(this.num.indexOf("7") != 1 )){
            System.out.print("        !!!Error1!!!\nВы ввели НЕКОРРЕКТНЫЙ номер\nПравильная форма: +7-ХХХ-ХХХ-ХХ-ХХ\n[Пример ввода: +78005553535]\nПожалуйста, введите номер телефона повторно: ");
            this.num = scan.nextLine();
@@ -106,14 +106,14 @@ class Person{  //Создание класса человек
         System.out.println();
 
     }
-    void ChangeModel(){  //Изменение Модели телефона
+    void ChangeModel(){  // Изменение Модели телефона
         Scanner scan = new Scanner(System.in);
         System.out.print(this.name+"'s новая модель телефона: ");
         this.model = scan.nextLine();
         System.out.println();
     }
 
-    void displayInfo(){  //Метод вывода информации
+    void displayInfo(){  // Метод вывода информации
         System.out.println("\nИмя: "+this.name+"\nВозраст: "+ this.age+ "\nМодель телефона: "+model+"\nНомер телефона: "+num+"\n");
     }
 }
