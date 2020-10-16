@@ -1,7 +1,7 @@
 # Couscous-v2.0
 Задания второго курса из Университета
 ____
-## Задание 1 (Класс Person и редактор объектов)
+### Задание 1 (Класс Person и редактор объектов)
 <details>
   <summary>Требования к заданию:</summary>
   
@@ -17,7 +17,7 @@ ____
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Main.java)
 ____
-## Задание 2 (Последовательность Фибоначи и числа Вампиры)
+### Задание 2 (Последовательность Фибоначи и числа Вампиры)
 <details>
   <summary>Требования к заданию:</summary>
   
@@ -32,7 +32,7 @@ ____
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/laba2.java)
 ____
-## Задание 3 (Текстовая игра)
+### Задание 3 (Текстовая игра)
 <details>
   <summary>Требования к заданию:</summary>
   
@@ -44,7 +44,7 @@ ____
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/FirstGame.java)
 ____
-## Задание 4 (Работа с текстовыми файлами)
+### Задание 4 (Работа с текстовыми файлами)
 <details>
   <summary>Требования к заданию:</summary>
   
