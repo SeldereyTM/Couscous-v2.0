@@ -74,3 +74,14 @@ ____
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/pRiKoL.java)
 ____
+### Задание 5 (Транскриптор цифр)
+<details>
+  <summary>Требования к заданию:</summary>
+  
+     1.Написать программу, которая будет принимать число Unsigned long
+     2.Число выводить прописью
+     
+</details>
+
+[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/NumbersInWords)
+____
