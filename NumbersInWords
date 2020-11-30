@@ -1,28 +1,35 @@
 package example;
-import java.io.*;
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);  //  Создаем сканер
 
-        System.out.println("Введите число, которое хотите получить прописью: ");
-        int num = scan.nextInt();
 
-        int counter = 0;
+        //  Пользователь вводит число, которое будет преобразованно в прописное
+        System.out.println("Введите положительное число, которое хотите получить прописью: ");
+        long num = scan.nextLong();
 
-        int[] arrayOfTriads = new int[7];
+        if (num == 0){  //  Если чел ввел 0 -> выводит ноль и заканчивает работу программы
+            System.out.println("Ноль");
+            System.exit(0);
+        }
 
-        while(num!=0){
+        int counter = 0;  //  Какой-то счетчик
+
+        long[] arrayOfTriads = new long[7];  //  Массив для триад
+
+        while(num != 0){  // Заполнение массива
             arrayOfTriads[counter] = num % 1000;
             num /= 1000;
             counter++;
         }
 
-        String answer = "";
 
+        String answer = "";  //  Пустое значение для ответа
+
+        //  Заполнение ответа на каждую триаду отдельно
         if (arrayOfTriads[6] != 0){
             answer += numberWriter(arrayOfTriads[6]);
             answer += "Квинтиллион";
@@ -51,65 +58,75 @@ public class Main {
             answer += "Миллион";
             answer = wordCorrector(answer,arrayOfTriads[2]);
         }
-
+        //  Триада тысяч работает по другим фунциям
         if (arrayOfTriads[1] != 0) {
             answer += numberWriter(arrayOfTriads[1]);
-           answer += thousandWordCorrector(answer,arrayOfTriads[1]);
+           answer = thousandWordCorrector(answer,arrayOfTriads[1]);
 
         }
         if (arrayOfTriads[0] != 0){
             answer += numberWriter(arrayOfTriads[0]);
         }
-        System.out.println(answer);
+
+        System.out.println(answer);  //  Выводим полученный ответ
     }
 
-    public static String thousandWordCorrector(String answer,int num){
-        StringBuffer strBuffer = new StringBuffer(answer);
-        if ((num % 10 == 1) && ((num % 100 - num % 10)!=10)) {
-            strBuffer.setCharAt(answer.length()-3, 'н');
-            strBuffer.setCharAt(answer.length()-2, 'а');
-            answer = strBuffer.toString();
-        } else if ((num % 10 == 2) && ((num % 100 - num % 10)!=10)) {
-            strBuffer.setCharAt(answer.length()-2, 'е');
-            answer = strBuffer.toString();
+
+    //  Функция для редактирования окончания слов в тысячной триаде
+    public static String thousandWordCorrector(String answer,long num){
+        char[] result = answer.toCharArray();
+
+        if ((num % 10 == 1) && ((num % 100 - num % 10) != 10)) {  //  Редактор окончаний 1
+            result[answer.length() - 3] = 'н';
+            result[answer.length() - 2] = 'а';
+        } else if ((num % 10 == 2) && ((num % 100 - num % 10) != 10)) {  //  Редактор окончаний 2
+            result[answer.length() - 2] = 'е';
         }
+
+        answer = String.valueOf(result);  //  Возвращение овета из массива в ответ
 
         answer += "Тысяч";
 
-        if ((num % 10 == 1) && ((num % 100 - num % 10)!=10)) {
-            answer +="а ";
-        } else if ((num % 10 == 2) && ((num % 100 - num % 10)!=10)) {
-            answer +="и ";
-        } else if ((num % 10 == 3) && ((num % 100 - num % 10)!=10)) {
-            answer +="и ";
-        } else if ((num % 10 == 4) && ((num % 100 - num % 10)!=10)) {
-            answer +="и ";
+          //  Редактирование слова тысяч
+        if ((num % 10 == 1) && ((num % 100 - num % 10) != 10)) {
+            answer += "а ";
+        } else if ((num % 10 == 2) && ((num % 100 - num % 10) != 10)) {
+            answer += "и ";
+        } else if ((num % 10 == 3) && ((num % 100 - num % 10) != 10)) {
+            answer += "и ";
+        } else if ((num % 10 == 4) && ((num % 100 - num % 10) != 10)) {
+            answer += "и ";
         } else {
-            answer +=" ";
+            answer += " ";
+        }
+
+        return answer;  //  Возвращает отредактированный ответ
+    }
+
+
+    //  Корректор оконачния высших триад
+    public static  String wordCorrector (String answer,long num){
+        if ((num % 10 == 1) && ((num % 100 - num % 10) != 10)) {
+            answer += " ";
+        } else if ((num % 10 == 2) && ((num % 100 - num % 10) != 10)) {
+            answer += "а ";
+        } else if ((num % 10 == 3) && ((num % 100 - num % 10) != 10)) {
+            answer += "а ";
+        } else if ((num % 10 == 4) && ((num % 100 - num % 10) != 10)) {
+            answer += "а ";
+        } else {
+            answer += "ов ";
         }
 
         return answer;
     }
 
-    public static  String wordCorrector (String answer,int num){
-        if ((num % 10 == 1) && ((num % 100 - num % 10)!=10)) {
-            answer +=" ";
-        } else if ((num % 10 == 2) && ((num % 100 - num % 10)!=10)) {
-            answer +="а ";
-        } else if ((num % 10 == 3) && ((num % 100 - num % 10)!=10)) {
-            answer +="а ";
-        } else if ((num % 10 == 4) && ((num % 100 - num % 10)!=10)) {
-            answer +="а ";
-        } else {
-            answer +="ов ";
-        }
-        return answer;
-    }
 
+     //  Прописывает цифры словами
+     public static String numberWriter (long number){
+        String miniAnswer = "";  //  Промежуточный ответ
 
-     public static String numberWriter (int number){
-        String miniAnswer = "";
-        int firstNumber = number / 100;
+        int firstNumber = (int) number / 100;  //  Берем первую цифру триады
 
         switch(firstNumber){
             case 1 -> miniAnswer += "Cто ";
@@ -123,10 +140,10 @@ public class Main {
             case 9 -> miniAnswer += "Девятьсот ";
         }
 
-         number %= 100;
+         number %= 100;  //  Избавляемся от старшей цифры триады
 
-        if (number > 0 && number <20){
-            switch(number){
+        if (number > 0 && number < 20){  //
+            switch((int)number){
                 case 1 -> miniAnswer += "Один ";
                 case 2 -> miniAnswer += "Два ";
                 case 3 -> miniAnswer += "Три ";
@@ -147,12 +164,12 @@ public class Main {
                 case 18 -> miniAnswer += "Восемнадцать ";
                 case 19 -> miniAnswer += "Девятнадцать ";
             }
-        } else if (number >= 20){
+        } else if (number >= 20){  //  Если не подходит под верхние слова
 
-            int fNumber = number / 10;
-            int sNumber = number % 10;
+            int fNumber = (int) number / 10;
+            int sNumber = (int) number % 10;
 
-            switch (fNumber){
+            switch (fNumber){  //  Среднее число триады
                 case 2 -> miniAnswer += "Двадцать ";
                 case 3 -> miniAnswer += "Тридцать ";
                 case 4 -> miniAnswer += "Сорок ";
@@ -163,7 +180,7 @@ public class Main {
                 case 9 -> miniAnswer += "Девяносто ";
             }
 
-            switch (sNumber){
+            switch (sNumber){  //  Младшее число триады
                 case 1 -> miniAnswer += "Один ";
                 case 2 -> miniAnswer += "Два ";
                 case 3 -> miniAnswer += "Три ";
@@ -176,6 +193,6 @@ public class Main {
             }
         }
 
-        return miniAnswer;
+        return miniAnswer;  //  Возвращаем добавленный ответ
     }
 }
