@@ -83,5 +83,5 @@ ____
      
 </details>
 
-[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/NumbersInWords)
+[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/NumbersInWords.lava)
 ____
