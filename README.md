@@ -1,8 +1,8 @@
 # Couscous-v2.0
 ## Задания второго курса из Университета
 <details>
-  <summary>Первый семестр</summary>
-____ 
+  <summary>ПЕРВЫЙ СМЕСТР</summary>
+  
 ### Задание 1 (Класс Person и редактор объектов)
 <details>
   <summary>Требования к заданию:</summary>
@@ -86,10 +86,12 @@ ____
 </details>
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/NumbersInWords.java)
-____
 </details>
 
 ____
+<details>
+  <summary>ВТОРОЙ СЕМЕСТР</summary>
+  
 ### Задание 1 (Структуры Данных)
 <details>
   <summary>Требования к заданию:</summary>
