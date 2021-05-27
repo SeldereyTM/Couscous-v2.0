@@ -1,5 +1,4 @@
 public class Laba1 {
-
     static class Mouse {
         public Brand brand;
         String id;
@@ -24,6 +23,4 @@ public class Laba1 {
     enum ConnectionType{
         Wireless, Wired, Combined
     }
-
-
 }
