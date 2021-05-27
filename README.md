@@ -3,6 +3,7 @@
 <details>
   <summary>Первый семестр</summary>
   ____
+  
 ### Задание 1 (Класс Person и редактор объектов)
 <details>
   <summary>Требования к заданию:</summary>
