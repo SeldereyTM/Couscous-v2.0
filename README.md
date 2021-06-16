@@ -101,5 +101,16 @@ ____
      
 </details>
 
-[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba1)
+[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba1.java)
 ____
+  ### Задание 2 (Структуры Данных)
+<details>
+  <summary>Требования к заданию:</summary>
+  
+     Создать класс очереди без использования стандартных библиотек
+     
+</details>
+
+[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba2.java)
+____
+
