@@ -103,7 +103,7 @@ ____
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba1.java)
 ____
-  ### Задание 2 (Структуры Данных)
+  ### Задание 2 (Создание очереди)
 <details>
   <summary>Требования к заданию:</summary>
   
@@ -113,7 +113,7 @@ ____
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba2.java)
 ____
-  ### Задание 3 (Структуры Данных)
+  ### Задание 3 (Консольная игра)
 <details>
   <summary>Требования к заданию:</summary>
   
