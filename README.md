@@ -124,4 +124,14 @@ ____
 
 [Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba3.java)
 ____
+  ### Задание 4 (Списки)
+<details>
+  <summary>Требования к заданию:</summary>
+  
+     Реализовать односвязный список на C++ без использования STL. За работу списка должны отвечать два класса: List и ListElem.
+     
+</details>
+
+[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba6.сpp)
+____
 
