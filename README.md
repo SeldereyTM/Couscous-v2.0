@@ -133,6 +133,6 @@ ____
      
 </details>
 
-[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba6.сpp)
+[Решение](https://github.com/SeldereyTM/Couscous-v2.0/blob/master/Laba6.cpp)
 ____
 
